@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>=^.^=</title>
+<style>
+.Panel{
+  color: #fff;
+  font-family: sans-serif;
+  opacity: 0;
+  padding: 20px;
+  display: none;
+  background-color: #ff7e5f;
+  transition: all .6s;
+}
+
+.Panel.-show{
+  opacity: 1;
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<button type="button" class="Button">show it</button>
+
+<p>text in P tag</p>
+
+<div class="Panel">
+  panel
+</div>
+
+<p>text in P tag</p>
+
+<script>
+const buttonEl = document.querySelector( '.Button' );
+const panelEl = document.querySelector( '.Panel' );
+
+buttonEl.addEventListener( 'click', function() {
+
+  panelEl.classList.toggle( '-show' )
+
+} );
+
+</script>
+</body>
+</html>

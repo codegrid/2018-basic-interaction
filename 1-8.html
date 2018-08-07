@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>=^.^=</title>
+<style>
+.Panel{
+  display: none;
+  background: #f7ff00;
+  transition: all .6s;
+}
+.Panel.-beroreEnter{
+  display: block;
+}
+.Panel.-enter{
+  display: block;
+  opacity: 0;
+}
+.Panel.-enterTo{
+  display: block;
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<button type="button" class="Button">click me</button>
+<div class="Panel">
+  Panel
+</div>
+
+<script>
+const buttonEl = document.querySelector( '.Button' );
+const panelEl = document.querySelector( '.Panel' );
+
+buttonEl.addEventListener( 'click', function() {
+
+  panelEl.classList.add( '-beforeEnter' );
+
+  requestAnimationFrame( function() {
+
+    panelEl.classList.add( '-enter' );
+    panelEl.classList.remove( '-beforeEnter' );
+
+      requestAnimationFrame( function() {
+
+        panelEl.classList.add( '-enterTo' );
+        panelEl.classList.remove( '-enter' );
+
+    } );
+
+  } );
+
+} );
+
+</script>
+</body>
+</html>
